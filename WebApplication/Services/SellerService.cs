@@ -23,6 +23,7 @@ namespace WebApplication.Services
         
         public void Insert(Seller obj)
         {
+            obj.Department = _context.Department.First(); //Provisório para não acusar o erro de ForeingKey
             _context.Add(obj);
             _context.SaveChanges();
         }   
